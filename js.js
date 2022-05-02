@@ -33,8 +33,8 @@ function poista() {
     while (friendList.firstChild) {
         friendList.removeChild(friendList.lastChild);
     }
-    kaverit.filter(kaveri => kaveri !== `${nimiInput.value}`);
-    for (let nimi of kaverit) {
+    let suodatettu = kaverit.filter(kaveri => kaveri !== nimiInput.value);
+    for (let nimi of suodatettu) {
         const li = document.createElement('li');
         li.appendChild(document.createTextNode(`${nimi}`));
         friendList.appendChild(li);
